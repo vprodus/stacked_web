@@ -3,6 +3,7 @@ import 'package:responsive_builder/responsive_builder.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:stacked_web/ui/common/app_colors.dart';
 import 'package:stacked_web/ui/common/shared_styles.dart';
+import 'package:stacked_web/ui/common/ui_helpers.dart';
 
 class HomeTitle extends StatelessWidget {
   const HomeTitle({super.key});
@@ -19,22 +20,14 @@ class HomeTitle extends StatelessWidget {
         GradientText(
           'MASTER\nFLUTTER',
           style: ktsTitleText.copyWith(
-            fontSize: getValueForScreenType(
-              context: context,
-              mobile: 60,
-              desktop: 80,
-            ),
+            fontSize: getResponsiveFontSize(context, fontSize: 80),
           ),
           colors: kgTitle,
         ),
         Text(
           'ON THE WEB',
           style: ktsTitleText.copyWith(
-            fontSize: getValueForScreenType(
-              context: context,
-              mobile: 60,
-              desktop: 80,
-            ),
+            fontSize: getResponsiveFontSize(context, fontSize: 80),
           ),
         ),
       ],
