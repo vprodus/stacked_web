@@ -6,6 +6,7 @@ import 'package:stacked_web/ui/views/unknown/unknown_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:stacked_web/services/http_service.dart';
+import 'package:stacked_web/services/course_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -24,6 +25,7 @@ import 'package:stacked_web/services/http_service.dart';
     LazySingleton(classType: DialogService),
     LazySingleton(classType: RouterService),
     LazySingleton(classType: HttpService),
+    LazySingleton(classType: CourseService),
 // @stacked-service
   ],
   bottomsheets: [

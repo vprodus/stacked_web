@@ -3,6 +3,7 @@ import 'package:mockito/mockito.dart';
 import 'package:stacked_web/app/app.locator.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:stacked_web/services/http_service.dart';
+import 'package:stacked_web/services/course_service.dart';
 // @stacked-import
 
 import 'test_helpers.mocks.dart';
@@ -12,6 +13,7 @@ import 'test_helpers.mocks.dart';
   MockSpec<BottomSheetService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<DialogService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<HttpService>(onMissingStub: OnMissingStub.returnDefault),
+  MockSpec<CourseService>(onMissingStub: OnMissingStub.returnDefault),
 // @stacked-mock-spec
 ])
 void registerServices() {
@@ -19,6 +21,7 @@ void registerServices() {
   getAndRegisterBottomSheetService();
   getAndRegisterDialogService();
   getAndRegisterHttpService();
+  getAndRegisterCourseService();
 // @stacked-mock-register
 }
 
@@ -76,6 +79,13 @@ MockHttpService getAndRegisterHttpService() {
   _removeRegistrationIfExists<HttpService>();
   final service = MockHttpService();
   locator.registerSingleton<HttpService>(service);
+  return service;
+}
+
+MockCourseService getAndRegisterCourseService() {
+  _removeRegistrationIfExists<CourseService>();
+  final service = MockCourseService();
+  locator.registerSingleton<CourseService>(service);
   return service;
 }
 // @stacked-mock-create
