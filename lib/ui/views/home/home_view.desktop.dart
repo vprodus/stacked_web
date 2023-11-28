@@ -6,6 +6,11 @@ import 'package:stacked_web/ui/common/shared_styles.dart';
 import 'package:stacked_web/ui/common/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_web/ui/views/home/widgets/home_image.dart';
+import 'package:stacked_web/ui/views/home/widgets/home_subtitle.dart';
+import 'package:stacked_web/ui/views/home/widgets/home_title.dart';
+import 'package:stacked_web/ui/widgets/common/academy_icon.dart';
+import 'package:stacked_web/ui/widgets/common/google_sign_in.dart';
 
 import 'home_viewmodel.dart';
 
@@ -26,70 +31,21 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'FilledStacks Academy',
-                    style: ktsBodyRegular.copyWith(fontWeight: FontWeight.w800),
-                  ),
+                  const AcademyIcon(),
                   const Spacer(flex: 2),
-                  GradientText(
-                    'MASTER\nFLUTTER',
-                    style: ktsTitleText,
-                    colors: kgTitle,
-                  ),
-                  Text(
-                    'ON THE WEB',
-                    style: ktsTitleText,
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        'Build amazing software, the right way. ',
-                        style:
-                            ktsBodyLarge.copyWith(fontWeight: FontWeight.w600),
-                      ),
-                      GradientText(
-                        'Sign up to be notified',
-                        style:
-                            ktsBodyLarge.copyWith(fontWeight: FontWeight.w600),
-                        colors: kgTitle,
-                      )
-                    ],
-                  ),
+                  const HomeTitle(),
+                  const HomeSubtitle(),
                   verticalSpaceMedium,
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 100),
                     child: SvgPicture.asset('assets/sign-up-arrow.svg'),
                   ),
                   verticalSpaceSmall,
-                  Container(
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      color: Colors.yellow,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 50, vertical: 10),
-                    child: const Text(
-                      'Sign up with Google',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
+                  const GoogleSignIn(),
                   const Spacer(flex: 3),
                 ],
               ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Image.asset(
-                  'assets/master-web-hero-image.png',
-                  width: kdDesktopMaxContentWidth * 0.4,
-                  height: double.infinity,
-                  fit: BoxFit.cover,
-                ),
-              )
+              const HomeImage(),
             ],
           ),
         ),
