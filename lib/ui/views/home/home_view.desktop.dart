@@ -1,6 +1,8 @@
 import 'package:flutter_svg/svg.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
+import 'package:stacked_web/ui/common/app_colors.dart';
 import 'package:stacked_web/ui/common/app_constants.dart';
+import 'package:stacked_web/ui/common/shared_styles.dart';
 import 'package:stacked_web/ui/common/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
@@ -13,6 +15,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
   @override
   Widget build(BuildContext context, HomeViewModel viewModel) {
     return Scaffold(
+      backgroundColor: kcBackgroundColor,
       body: Center(
         child: SizedBox(
           width: kdDesktopMaxContentWidth,
@@ -23,50 +26,32 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
+                  Text(
                     'FilledStacks Academy',
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w800,
-                    ),
+                    style: ktsBodyRegular.copyWith(fontWeight: FontWeight.w800),
                   ),
                   const Spacer(flex: 2),
                   GradientText(
                     'MASTER\nFLUTTER',
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w800,
-                      fontSize: 80,
-                      height: 0.95,
-                    ),
-                    colors: const [Color(0xff0CFF60), Color(0xff0091FB)],
+                    style: ktsTitleText,
+                    colors: kgTitle,
                   ),
-                  const Text(
+                  Text(
                     'ON THE WEB',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w800,
-                      fontSize: 80,
-                      height: 0.95,
-                    ),
+                    style: ktsTitleText,
                   ),
                   Row(
                     children: [
-                      const Text(
-                        'Build amazing software, the right way.',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 20,
-                        ),
+                      Text(
+                        'Build amazing software, the right way. ',
+                        style:
+                            ktsBodyLarge.copyWith(fontWeight: FontWeight.w600),
                       ),
                       GradientText(
                         'Sign up to be notified',
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 20,
-                        ),
-                        colors: const [
-                          Color(0xff0CFF60),
-                          Color(0xff0091FB),
-                        ],
+                        style:
+                            ktsBodyLarge.copyWith(fontWeight: FontWeight.w600),
+                        colors: kgTitle,
                       )
                     ],
                   ),
