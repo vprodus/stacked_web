@@ -1,8 +1,6 @@
 import 'package:flutter_svg/svg.dart';
-import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:stacked_web/ui/common/app_colors.dart';
 import 'package:stacked_web/ui/common/app_constants.dart';
-import 'package:stacked_web/ui/common/shared_styles.dart';
 import 'package:stacked_web/ui/common/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';

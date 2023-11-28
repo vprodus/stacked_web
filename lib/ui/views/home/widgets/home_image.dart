@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:stacked_web/ui/common/app_constants.dart';
 
 class HomeImage extends StatelessWidget {
@@ -11,7 +12,11 @@ class HomeImage extends StatelessWidget {
       child: Image.asset(
         'assets/master-web-hero-image.png',
         width: kdDesktopMaxContentWidth * 0.4,
-        height: double.infinity,
+        height: getValueForScreenType(
+          context: context,
+          mobile: 650,
+          desktop: double.infinity,
+        ),
         fit: BoxFit.cover,
       ),
     );
